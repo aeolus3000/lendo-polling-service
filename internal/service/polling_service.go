@@ -1,10 +1,10 @@
 package service
 
 import (
+	"github.com/aeolus3000/lendo-polling-service/internal/config"
 	"github.com/aeolus3000/lendo-sdk/application"
 	"github.com/aeolus3000/lendo-sdk/configuration"
 	log "github.com/sirupsen/logrus"
-	"lendo-polling-service/internal/config"
 	"os"
 	"os/signal"
 	"syscall"

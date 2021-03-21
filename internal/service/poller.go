@@ -1,13 +1,13 @@
 package service
 
 import (
+	"github.com/aeolus3000/lendo-polling-service/internal/config"
+	"github.com/aeolus3000/lendo-polling-service/internal/job"
 	bankingsdk "github.com/aeolus3000/lendo-sdk/banking"
 	"github.com/aeolus3000/lendo-sdk/banking/dnb"
 	"github.com/aeolus3000/lendo-sdk/executor"
 	"github.com/aeolus3000/lendo-sdk/messaging"
 	log "github.com/sirupsen/logrus"
-	"lendo-polling-service/internal/config"
-	"lendo-polling-service/internal/job"
 	"os"
 )
 
