@@ -1,12 +1,13 @@
 package main
 
 import (
+	"github.com/aeolus3000/lendo-polling-service/internal/service"
 	"github.com/aeolus3000/lendo-sdk/application"
-	"lendo-polling-service/internal/service"
+	"os"
 )
 
 // Main function
 func main() {
 	ps := service.PollingService{}
-	application.NewBootstrapApplication(&ps, service.ApplicationName)
+	application.NewBootstrapApplication(&ps, service.ApplicationName).Execute(os.Args)
 }

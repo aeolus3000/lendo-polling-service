@@ -16,8 +16,8 @@ const (
 
 type PollingService struct {
 	application.AbstractApplication
-	cfg config.ServiceConf
-	poller *Poller
+	cfg            config.ServiceConf
+	poller         *Poller
 	shutdownSignal <-chan os.Signal
 }
 
@@ -47,7 +47,7 @@ func (ps *PollingService) readConfiguration(configuration configuration.Configur
 
 func (ps *PollingService) createPoller() {
 	poller := NewPoller(ps.cfg, ps.shutdownSignal)
-	ps.poller = &poller
+	ps.poller = poller
 }
 
 func createShutdownSignalReceiver() <-chan os.Signal {
