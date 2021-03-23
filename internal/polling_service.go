@@ -1,7 +1,8 @@
-package service
+package internal
 
 import (
 	"github.com/aeolus3000/lendo-polling-service/internal/config"
+	"github.com/aeolus3000/lendo-polling-service/internal/service"
 	"github.com/aeolus3000/lendo-sdk/application"
 	"github.com/aeolus3000/lendo-sdk/configuration"
 	log "github.com/sirupsen/logrus"
@@ -17,7 +18,7 @@ const (
 type PollingService struct {
 	application.AbstractApplication
 	cfg            config.ServiceConf
-	poller         *Poller
+	poller         *service.Poller
 	shutdownSignal <-chan os.Signal
 }
 
@@ -46,7 +47,7 @@ func (ps *PollingService) readConfiguration(configuration configuration.Configur
 }
 
 func (ps *PollingService) createPoller() {
-	poller := NewPoller(ps.cfg, ps.shutdownSignal)
+	poller := service.NewPoller(ps.cfg, ps.shutdownSignal)
 	ps.poller = poller
 }
 
